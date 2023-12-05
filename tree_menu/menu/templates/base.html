@@ -1,0 +1,95 @@
+{% load menu_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    {% block title %}
+    {% endblock %}
+  </title>
+
+  <style>
+    .treeHTML {
+      line-height: normal;
+    }
+
+    .treeHTML details {
+      display: block;
+    }
+
+    .treeHTML div {
+      position: relative;
+      margin: 0 0 0 .5em;
+      padding: 0 0 0 1.2em;
+    }
+
+    .treeHTML div:not(:last-child) {
+      /* необязательно */
+      border-left: 1px solid #ccc;
+    }
+
+    .treeHTML div:before {
+      /* необязательно */
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1.1em;
+      height: .5em;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .treeHTML div:last-child:before {
+      /* необязательно */
+      border-left: 1px solid #ccc;
+    }
+
+    .treeHTML summary {
+      /* стилями можно задать любую форму, например, тот же плюс. Я специально не стала усложнять, чтобы можно было проще разобраться в коде */
+      position: absolute;
+      top: 0;
+      left: 0;
+      cursor: pointer;
+    }
+
+    .treeHTML details[open] summary {
+      /* убрать рамку при фокусе */
+      outline: none;
+    }
+
+    /* Ваш общий стиль для пунктов меню */
+    .treeHTML a {
+      color: black;
+      /* Цвет по умолчанию */
+    }
+
+    /* Стиль для активного пункта меню */
+    .treeHTML a.active {
+      color: red;
+      /* Цвет для активного пункта меню */
+    }
+  </style>
+</head>
+
+<body>
+
+
+  {% draw_menu 'main_menu' %}
+
+  <!-- <br>
+  {% draw_menu 'about_menu' %} -->
+
+
+  {% block content %}
+
+
+  {% endblock %}
+
+
+
+</body>
+
+</html>
