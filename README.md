@@ -3,13 +3,13 @@
 ТЗ: https://docs.google.com/document/d/1XTnbcXhejyGB-I2cHRiiSZqI3ElHzqDJeetwHkJbTa8/edit
 
 Установка:
-1) git clone https://github.com/ziyoviddin-m/test_task.git
+1) git clone https://github.com/ziyoviddin-m/tree_menu.git
 
 2) python -m venv venv
 
 3) .\venv\Scripts\activate
 
-4) cd test_task
+4) cd tree_menu
 
 5) pip install -r requirements.txt
 
